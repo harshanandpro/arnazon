@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background: linear-gradient(135deg, #131921 0%, #232f3e 100%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100vw;
+}
+
+.navbar__container {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  width: 100vw;
+}
+
+/* Left Section - Logo */
+.navbar__left {
+  display: flex;
+  align-items: center;
+  flex: 0.2;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 10px;
+  align-items: flex-start;
+}
+
+.navbar__logo {
+  height: 45px;
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: brightness(1);
+}
+
+.navbar__logo:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+/* Center Section - Search Bar */
+.navbar__center {
+  flex: 0.6;
+  display: flex;
+  justify-content: center;
+}
+
+.search__container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search__container:focus-within {
+  box-shadow: 0 4px 16px rgba(255, 153, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.navbar__input {
+  flex: 1;
+  padding: 5px 16px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  font-family: inherit;
+  color: #333;
+}
+
+.navbar__input::placeholder {
+  color: #999;
+  font-weight: 400;
+}
+
+.search__button {
+  background: linear-gradient(135deg, #ff9900 0%, #ff7700 100%);
+  border: none;
+  padding: 5px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.search__button:hover {
+  background: linear-gradient(135deg, #ff7700 0%, #ff5500 100%);
+  transform: scale(1.05);
+}
+
+.search__icon {
+  font-size: 24px;
+  color: white;
+}
+
+/* Right Section - Cart & Avatar */
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-right: 10px;
+  flex: 0.2;
+  justify-content: flex-end;
+}
+
+.cart__container {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cart__container:hover {
+  transform: scale(1.1);
+}
+
+.cart__icon {
+  font-size: 32px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.cart__container:hover .cart__icon {
+  color: #ff9900;
+}
+
+.cart__badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff9900;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  border: 2px solid #131921;
+}
+
+.navbar__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff9900 0%, #ff5500 100%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(255, 153, 0, 0.3);
+}
+
+.navbar__avatar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 16px rgba(255, 153, 0, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar__container {
+    padding: 10px 16px;
+    gap: 12px;
+  }
+
+  .navbar__logo {
+    height: 35px;
+  }
+
+  .navbar__center {
+    max-width: 100%;
+  }
+
+  .navbar__input {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .search__button {
+    padding: 10px 16px;
+  }
+
+  .search__icon {
+    font-size: 20px;
+  }
+
+  .cart__icon {
+    font-size: 28px;
+  }
+
+  .navbar__avatar {
+    width: 35px;
+    height: 35px;
+  }
+
+  .navbar__right {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar__container {
+    flex-wrap: wrap;
+    padding: 8px 12px;
+  }
+
+  .navbar__left {
+    order: 1;
+  }
+
+  .navbar__right {
+    order: 2;
+    gap: 12px;
+  }
+
+  .navbar__center {
+    order: 3;
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .navbar__logo {
+    height: 30px;
+  }
+
+  .navbar__input {
+    font-size: 13px;
+  }
+
+  .cart__icon {
+    font-size: 24px;
+  }
+
+  .navbar__avatar {
+    width: 30px;
+    height: 30px;
+  }
+}
