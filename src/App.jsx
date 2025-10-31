@@ -7,8 +7,8 @@ import Cart from "./Pages/Cart";
 import Login from "./Pages/Login";
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
-import { ProtectedRoute } from './components/ProtectedRoute';
-import { PublicRoute } from './components/PublicRoute';
+import { ProtectedRoute } from './Components/ProtectedRoute';
+import { PublicRoute } from './Components/PublicRoute';
 
 function App() {
   return (
