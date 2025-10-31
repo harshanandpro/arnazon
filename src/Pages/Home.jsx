@@ -10,10 +10,10 @@ const Home = () => {
         <div className="hero__content">
           <span className="hero__label">Premium Collection</span>
           <h1 className="hero__title">
-            If You Thought It Was Amazon,<br />
-            You Might Need New Glasses
+            Arnazon
           </h1>
-          <p className="hero__tagline">So Start Shopping</p>
+          <p className="hero__tagline">If You Thought It Was Amazon,<br />
+            You Might Need New Glasses So Start Shopping</p>
           <button className="hero__cta">
             Explore Collection
             <FiArrowRight className="arrow__icon" />

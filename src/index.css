@@ -1,4 +1,12 @@
 body{
     margin: 0;
     padding: 0;
+    
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(0.5 0 0);
+}
+
+body::-webkit-scrollbar-track {
+  background-color: none !important;
 }
