@@ -9,13 +9,23 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [userPhotoURL, setUserPhotoURL] = useState(null);
 
   useEffect(() => {
     // Listen for auth state changes
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
+      
+      // Get user's profile picture from Firebase Auth
+      if (user) {
+        setUserPhotoURL(user.photoURL);
+        console.log('User logged in:', user.email);
+        console.log('Photo URL:', user.photoURL);
+      } else {
+        setUserPhotoURL(null);
+      }
+      
       setLoading(false);
-      console.log('Auth state changed:', user?.email || 'No user');
     });
 
     return unsubscribe;
@@ -36,7 +46,8 @@ export const AuthProvider = ({ children }) => {
   const value = {
     currentUser,
     loading,
-    logout
+    logout,
+    userPhotoURL
   };
 
   return (

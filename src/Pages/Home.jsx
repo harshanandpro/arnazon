@@ -1,8 +1,11 @@
 import React from 'react'
 import './Home.css'
 import { FiArrowRight } from "react-icons/fi";
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+    const navigate = useNavigate();
+  
   return (
     <div className="home">
       {/* Hero Section */}
@@ -14,7 +17,7 @@ const Home = () => {
           </h1>
           <p className="hero__tagline">If You Thought It Was Amazon,<br />
             You Might Need New Glasses So Start Shopping</p>
-          <button className="hero__cta">
+          <button className="hero__cta" onClick={() => navigate('/')}>
             Explore Collection
             <FiArrowRight className="arrow__icon" />
           </button>
@@ -35,7 +38,7 @@ const Home = () => {
           <div className="featured__item large">
             <div className="featured__overlay">
               <h3>Premium Electronics</h3>
-              <button className="featured__btn">
+              <button className="featured__btn" onClick={() => navigate('/')}>
                 Discover <FiArrowRight />
               </button>
             </div>
@@ -44,7 +47,7 @@ const Home = () => {
           <div className="featured__item">
             <div className="featured__overlay">
               <h3>Fashion</h3>
-              <button className="featured__btn">
+              <button className="featured__btn" onClick={() => navigate('/')}>
                 Discover <FiArrowRight />
               </button>
             </div>
@@ -53,7 +56,7 @@ const Home = () => {
           <div className="featured__item">
             <div className="featured__overlay">
               <h3>Lifestyle</h3>
-              <button className="featured__btn">
+              <button className="featured__btn" onClick={() => navigate('/')}>
                 Discover <FiArrowRight />
               </button>
             </div>
@@ -74,7 +77,7 @@ const Home = () => {
           <span className="showcase__label">New Arrivals</span>
           <h2>Redefining Luxury</h2>
           <p>Experience premium quality with our carefully selected collection. Each piece embodies excellence and attention to detail.</p>
-          <button to="/" className="showcase__btn">
+          <button className="showcase__btn" onClick={() => navigate('/')}>
             View Collection <FiArrowRight />
           </button>
         </div>
@@ -107,7 +110,7 @@ const Home = () => {
       {/* Final CTA */}
       <section className="final__cta">
         <h2>Begin Your Journey</h2>
-        <button className="final__btn">
+        <button className="final__btn" onClick={() => navigate('/')}>
           Shop Now <FiArrowRight />
         </button>
       </section>

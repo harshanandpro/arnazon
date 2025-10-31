@@ -3,11 +3,13 @@ import './Cart.css'
 import { useCart } from '../context/CartContext'
 import { useNavigate } from 'react-router-dom'
 import { MdDelete } from "react-icons/md";
+import { useCurrency } from '../context/CurrencyContex'
 import { FiMinus, FiPlus } from "react-icons/fi";
 
 const Cart = () => {
   const { cartItems, totalPrice, removeFromCart, updateQuantity, clearCart } = useCart();
   const navigate = useNavigate();
+  const { formatPrice, getCurrencySymbol, convertPrice } = useCurrency();
 
   if (cartItems.length === 0) {
     return (
@@ -64,9 +66,11 @@ const Cart = () => {
                 </div>
 
                 <div className="item__price">
-                  <p className="item__unit__price">${item.price}</p>
+                  <p className="item__unit__price">
+                    {getCurrencySymbol()}{formatPrice(item.price)}
+                  </p>
                   <p className="item__total__price">
-                    ${(item.price * (item.quantity || 1)).toFixed(2)}
+                    {getCurrencySymbol()}{formatPrice(item.price * (item.quantity || 1))}
                   </p>
                 </div>
 
@@ -86,7 +90,7 @@ const Cart = () => {
             
             <div className="summary__row">
               <span>Subtotal</span>
-              <span>${totalPrice.toFixed(2)}</span>
+              <span>{getCurrencySymbol()}{formatPrice(totalPrice)}</span>
             </div>
 
             <div className="summary__row">
@@ -96,14 +100,14 @@ const Cart = () => {
 
             <div className="summary__row">
               <span>Tax (10%)</span>
-              <span>${(totalPrice * 0.1).toFixed(2)}</span>
+              <span>{getCurrencySymbol()}{formatPrice(totalPrice * 0.1)}</span>
             </div>
 
             <div className="summary__divider"></div>
 
             <div className="summary__row total">
               <span>Total</span>
-              <span>${(totalPrice + totalPrice * 0.1).toFixed(2)}</span>
+              <span>{getCurrencySymbol()}{formatPrice(totalPrice + totalPrice * 0.1)}</span>
             </div>
 
             <button className="checkout__btn">Proceed to Checkout</button>
