@@ -1,4 +1,4 @@
-import { initializeApp } from "firebase/app";
+console.log("ENV FULL:", import.meta.env);import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 console.log('API Key:', import.meta.env.VITE_FIREBASE_API_KEY);
 console.log('Auth Domain:', import.meta.env.VITE_FIREBASE_AUTH_DOMAIN);

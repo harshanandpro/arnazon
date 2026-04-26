@@ -30,8 +30,8 @@ const Cart = () => {
 
   return (
     <div className="cart__page">
+      {/* <h1 className="cart__title">Shopping Cart</h1> */}
       <div className="cart__container">
-        <h1 className="cart__title">Shopping Cart</h1>
         
         <div className="cart__content">
           <div className="cart__items">
